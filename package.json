@@ -1,0 +1,15 @@
+{
+  "name": "alexa-apiai-bridge",
+  "version": "1.0.0",
+  "description": "Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function",
+  "author": "Gnzlt",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gnzlt/AlexaApiAiBridge.git"
+  },
+  "dependencies": {
+    "alexa-sdk": "^1.0.7",
+    "apiai": "^4.0.1"
+  }
+}

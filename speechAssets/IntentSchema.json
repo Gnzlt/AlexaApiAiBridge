@@ -1,0 +1,19 @@
+{
+  "intents": [
+    {
+      "intent": "ApiIntent",
+      "slots": [
+        {
+          "name": "Text",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    }
+  ]
+}
