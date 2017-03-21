@@ -19,7 +19,7 @@ exports.handler = function (event, context) {
 var handlers = {
     'LaunchRequest': function () {
         var self = this;
-        alexaSessionId = getTruncatedSessionIdFromAlexa(self.event.session.sessionId);
+        alexaSessionId = self.event.session.sessionId.split('amzn1.echo-api.session.').pop();
         apiAi.eventRequest({name: 'WELCOME'}, {sessionId: alexaSessionId})
             .on('response', function (response) {
                 var speech = response.result.fulfillment.speech;
@@ -78,7 +78,3 @@ var handlers = {
             .end();
     }
 };
-
-function getTruncatedSessionIdFromAlexa(alexaSessionId) {
-    return alexaSessionId.split('amzn1.echo-api.session.').pop();
-}
