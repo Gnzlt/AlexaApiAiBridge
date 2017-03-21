@@ -33,9 +33,6 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 	    },
 	    {
 	      "intent": "AMAZON.StopIntent"
-	    },
-	    {
-	      "intent": "AMAZON.HelpIntent"
 	    }
 	  ]
 	}
@@ -62,6 +59,7 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 
 #### Intents
 * Select **Default Welcome Intent**:
+	* Add **`WELCOME`** as a trigger Event.
 	* Add or modify any text responses which will be triggered as the first welcome response.
 
 * Select **Default Fallback Intent**:
@@ -94,7 +92,7 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 * Enter a **Name** and choose **Node.js 4.x** as the *Runtime*.
 
 	##### Lambda function code
-	* [**Download the zip file**](https://github.com/Gnzlt/AlexaApiAiBridge/releases/latest) from the latest release of this repo.
+	* [**Download the `AlexaApiAiBridge.zip` file**](https://github.com/Gnzlt/AlexaApiAiBridge/releases/latest) from the latest release of this repo.
 	* Drop down the *Code entry type* menu and select **Upload a .ZIP file**.
 	* Click on the **Function package** upload button and choose the file you just downloaded.
 	
