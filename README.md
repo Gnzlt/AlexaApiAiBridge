@@ -9,7 +9,7 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 * Select **"Add a New Skill"**.
 
 #### Skill Information
-* Select **English (U.S.)** as the Skill language *(it's the only way to use [LITERAL slot types](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/alexa-skills-kit-interaction-model-reference#literal-slot-type-reference) to recognize words without converting them).*
+* Select **English (U.S.)** as the Skill language.
 * Select the **Custom Interaction Model** *Skill type*.
 * Add the **Name** and the **Invocation Name** of the skill.
 
@@ -81,7 +81,7 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 * Log in to the [AWS Management Console](https://console.aws.amazon.com/) and navigate to AWS Lambda.
 
 #### Create a Lambda Function
-* Click the region drop-down in the upper-right corner of the console and select either **US East (N. Virginia)** or **EU (Ireland)** *(These are the only two regions currently supported for Alexa skill development on AWS Lambda, and choosing the right region will guarantee lower latency).*
+* Click the region drop-down in the upper-right corner of the console and select either **US East (N. Virginia)** or **EU (Ireland)** *(choosing the right region will guarantee lower latency)*.
 * If you have no Lambda functions yet, click **Get Started Now**. Otherwise, click **Create a Lambda Function**.
 
 #### Select blueprint and Configure triggers
@@ -116,5 +116,11 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 	const ALEXA_APP_ID = 'amzn1.ask.skill.app.your-skill-id';
 	const APIAI_CLIENT_ACCESS_TOKEN = 'your-apiai-client-access-token';
 	```
+* Go to [Alexa Manager](http://alexa.amazon.com/spa/index.html#settings) and change the language of your device to **English (United States)** inside the Settings menu.
 
+
+## Limitations
+
+* Your device and the Alexa Skills has to use  **English (United States)** language because it's the only way to use [LITERAL slot types](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/alexa-skills-kit-interaction-model-reference#literal-slot-type-reference) to recognize words without converting them.
+* The Lambda region has to be either **US East (N. Virginia)** or **EU (Ireland)** because those are the only two regions currently supported for Alexa skill development on AWS Lambda.
 
