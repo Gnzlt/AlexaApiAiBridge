@@ -19,19 +19,21 @@ exports.handler = function (event, context) {
 var handlers = {
     'LaunchRequest': function () {
         var self = this;
-        alexaSessionId = self.event.session.sessionId.split('amzn1.echo-api.session.').pop();
+        setAlexaSessionId(self.event.session.sessionId);
         apiAi.eventRequest({name: 'WELCOME'}, {sessionId: alexaSessionId})
             .on('response', function (response) {
                 var speech = response.result.fulfillment.speech;
                 self.emit(':ask', speech, speech);
             })
             .on('error', function (error) {
+                console.error(error.message);
                 self.emit(':tell', error);
             })
             .end();
     },
     'ApiIntent': function () {
         var self = this;
+        setAlexaSessionId(self.event.session.sessionId);
         var text = self.event.request.intent.slots.Text.value;
         if (text) {
             apiAi.textRequest(text, {sessionId: alexaSessionId})
@@ -44,6 +46,7 @@ var handlers = {
                     }
                 })
                 .on('error', function (error) {
+                    console.error(error.message);
                     self.emit(':tell', error.message);
                 })
                 .end();
@@ -61,6 +64,7 @@ var handlers = {
                 self.emit(':tell', response.result.fulfillment.speech);
             })
             .on('error', function (error) {
+                console.error(error.message);
                 self.emit(':tell', error.message);
             })
             .end();
@@ -73,8 +77,13 @@ var handlers = {
                 self.emit(':ask', speech, speech);
             })
             .on('error', function (error) {
+                console.error(error.message);
                 self.emit(':tell', error.message);
             })
             .end();
     }
 };
+
+function setAlexaSessionId(sessionId) {
+    alexaSessionId = sessionId.split('amzn1.echo-api.session.').pop();
+}
