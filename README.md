@@ -72,7 +72,7 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 
 #### Agent Settings
 * Select the the gear icon (upper-left corner) and go to **Settings**.
-* Copy your **Client access token** to use it later in the [Final Configuration section](#final-configuration).
+* Copy your **Developer access token** to use it later in the [Final Configuration section](#final-configuration).
 
 
 ### 3. Create an AWS Lambda Function
@@ -110,11 +110,11 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 ### Final Configuration
 * Copy the Lambda **ARN** (upper-right corner) and use in the [Alexa Skill Configuration section](#skill-configuration).
 * Go to your Lambda **Code** tab.
-* Replace `ALEXA_APP_ID` with your **Alexa App Id** and `APIAI_CLIENT_ACCESS_TOKEN` with your **Api.ai Client Access Token**:
+* Replace `ALEXA_APP_ID` with your **Alexa App Id** and `APIAI_DEVELOPER_ACCESS_TOKEN` with your **Api.ai Developer Access Token**:
 
 	```
 	const ALEXA_APP_ID = 'amzn1.ask.skill.app.your-skill-id';
-	const APIAI_CLIENT_ACCESS_TOKEN = 'your-apiai-client-access-token';
+	const APIAI_DEVELOPER_ACCESS_TOKEN = 'your-apiai-developer-access-token';
 	```
 * Go to [Alexa Manager](http://alexa.amazon.com/spa/index.html#settings) and change the language of your device to **English (United States)** inside the Settings menu.
 

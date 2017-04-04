@@ -3,10 +3,10 @@
 var Alexa = require('alexa-sdk');
 var ApiAi = require('apiai');
 
-const ALEXA_APP_ID = '';
-const APIAI_CLIENT_ACCESS_TOKEN = '';
+const ALEXA_APP_ID = 'amzn1.ask.skill.app.your-skill-id';
+const APIAI_DEVELOPER_ACCESS_TOKEN = 'your-apiai-developer-access-token';
 
-var apiAi = ApiAi(APIAI_CLIENT_ACCESS_TOKEN);
+var apiAi = ApiAi(APIAI_DEVELOPER_ACCESS_TOKEN);
 var alexaSessionId;
 
 exports.handler = function (event, context) {
