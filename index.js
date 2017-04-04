@@ -39,7 +39,7 @@ var handlers = {
             apiAi.textRequest(text, {sessionId: alexaSessionId})
                 .on('response', function (response) {
                     var speech = response.result.fulfillment.speech;
-                    if (response.result.actionIncomplete) {
+                    if (isResponseIncompleted(response)) {
                         self.emit(':ask', speech, speech);
                     } else {
                         self.emit(':tell', speech);
@@ -83,6 +83,19 @@ var handlers = {
             .end();
     }
 };
+
+function isResponseIncompleted(response) {
+    if (response.result.actionIncomplete) {
+        return true;
+    } else {
+        for (var i = 0; i < response.result.contexts.length; i++) {
+            if (response.result.contexts[i].lifespan > 1) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
 
 function setAlexaSessionId(sessionId) {
     alexaSessionId = sessionId.split('amzn1.echo-api.session.').pop();
