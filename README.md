@@ -71,7 +71,7 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 	* Add or modify any text responses which will be triggered as a goodbye response.
 
 #### Agent Settings
-* Select the the gear icon (upper-left corner) and go to **Settings**.
+* Select the gear icon (upper-left corner) and go to **Settings**.
 * Copy your **Developer access token** to use it later in the [Final Configuration section](#final-configuration).
 
 
@@ -89,7 +89,7 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 * When prompted to *Configure Triggers*, click the box and select **Alexa Skills Kit**, then click **Next**.
 
 #### Configure function
-* Enter a **Name** and choose **Node.js 4.x** as the *Runtime*.
+* Enter a **Name** and choose **Node.js 6.x** as the *Runtime*.
 
 	##### Lambda function code
 	* [**Download the `AlexaApiAiBridge.zip` file**](https://github.com/Gnzlt/AlexaApiAiBridge/releases/latest) from the latest release of this repo.
@@ -121,6 +121,6 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 
 ## Limitations
 
-* Your device and the Alexa Skills has to use  **English (United States)** language because it's the only way to use [LITERAL slot types](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/alexa-skills-kit-interaction-model-reference#literal-slot-type-reference) to recognize words without converting them.
+* Your device and the Alexa Skills has to use  **English (United States)** language because it's the only way to use [LITERAL slot types](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/alexa-skills-kit-interaction-model-reference#literal) to recognize words without converting them.
 * The Lambda region has to be either **US East (N. Virginia)** or **EU (Ireland)** because those are the only two regions currently supported for Alexa skill development on AWS Lambda.
 
