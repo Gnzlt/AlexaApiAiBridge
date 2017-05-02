@@ -16,27 +16,31 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 #### Interaction Model
 * Use the next JSON as **Intent Schema**:
 
-	```json
-	{
-	  "intents": [
-	    {
-	      "intent": "ApiIntent",
-	      "slots": [
-	        {
-	          "name": "Text",
-	          "type": "AMAZON.LITERAL"
-	        }
-	      ]
-	    },
-	    {
-	      "intent": "AMAZON.CancelIntent"
-	    },
-	    {
-	      "intent": "AMAZON.StopIntent"
-	    }
-	  ]
-	}
-	```
+```json
+{
+  "intents": [
+    {
+      "intent": "ApiIntent",
+      "slots": [
+        {
+          "name": "Text",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    }
+  ]
+}
+
+```
 * Create a **Custom Slot Type**:
 	* Type: `list_test`
 	* Values: `test`
