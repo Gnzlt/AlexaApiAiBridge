@@ -58,6 +58,12 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+# Yarn Lock file
+yarn.lock
+
+# package.json Lock file
+package-lock.json
+
 # dotenv environment variables file
 .env
 
@@ -69,7 +75,6 @@ typings/
 
 # Icon must end with two \r
 Icon
-
 
 # Thumbnails
 ._*
@@ -97,6 +102,9 @@ Temporary Items
 # User-specific stuff:
 .idea/
 *.zip
+
+# CMake
+cmake-build-debug/
 
 ## File-based project format:
 *.iws
