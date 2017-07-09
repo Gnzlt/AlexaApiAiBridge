@@ -101,5 +101,9 @@ function isResponseIncompleted(response) {
 }
 
 function setAlexaSessionId(sessionId) {
-    alexaSessionId = sessionId.split('amzn1.echo-api.session.').pop();
+    if (sessionId.indexOf("amzn1.echo-api.session.") != -1) {
+        alexaSessionId = sessionId.split('amzn1.echo-api.session.').pop();
+    } else {
+        alexaSessionId = sessionId.split('SessionId.').pop();
+    }
 }
