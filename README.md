@@ -73,6 +73,11 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 * Create a new Intent called **Default Bye Event**:
 	* Add **`BYE`** as a trigger Event.
 	* Add or modify any text responses which will be triggered as a goodbye response.
+	* Ensure that all contexts are deleted when this event is triggered.
+
+* Create a new Intent called **Default Help Event**:
+	* Add **`HELP`** as a trigger Event.
+	* Add or modify any text responses which will be triggered when the user asks for help.
 
 #### Agent Settings
 * Select the gear icon (upper-left corner) and go to **Settings**.
