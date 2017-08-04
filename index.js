@@ -61,7 +61,8 @@ var handlers = {
         var self = this;
         ApiAi.eventRequest({name: 'HELP'}, {sessionId: alexaSessionId})
             .on('response', function (response) {
-                self.emit(':ask', response.result.fulfillment.speech);
+                var speech = response.result.fulfillment.speech;
+                self.emit(':ask', speech, speech);
             })
             .on('error', function (error) {
                 console.error(error.message);
