@@ -58,7 +58,16 @@ var handlers = {
         this.emit('AMAZON.StopIntent');
     },
     'AMAZON.HelpIntent': function () {
-        this.emit('Unhandled');
+        var self = this;
+        ApiAi.eventRequest({name: 'HELP'}, {sessionId: alexaSessionId})
+            .on('response', function (response) {
+                self.emit(':ask', response.result.fulfillment.speech);
+            })
+            .on('error', function (error) {
+                console.error(error.message);
+                self.emit(':tell', error.message);
+            })
+            .end();
     },
     'AMAZON.StopIntent': function () {
         var self = this;
