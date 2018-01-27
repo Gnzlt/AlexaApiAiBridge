@@ -1,15 +1,15 @@
 {
-  "name": "alexa-apiai-bridge",
-  "version": "1.1.1",
-  "description": "Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function",
+  "name": "alexa-dialogflow-bridge",
+  "version": "1.2",
+  "description": "Bridge to connect Amazon Alexa to Dialogflow (aka. Api.ai) using an AWS Lambda Function",
   "author": "Gnzlt",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Gnzlt/AlexaApiAiBridge.git"
+    "url": "https://github.com/Gnzlt/AlexaDialogflowBridge.git"
   },
   "dependencies": {
-    "alexa-sdk": "^1.0.11",
+    "alexa-sdk": "^1.0.25",
     "apiai": "^4.0.2"
   }
 }

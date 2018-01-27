@@ -1,5 +1,5 @@
-# AlexaApiAiBridge
-Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
+# AlexaDialogflowBridge
+Bridge to connect Amazon Alexa to Dialogflow *(aka. Api.ai)* using an AWS Lambda Function.
 
 ## Steps
 ### 1. Create a new Alexa Skill
@@ -56,10 +56,12 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 * Select **AWS Lambda ARN (Amazon Resource Name)** as *Service Endpoint Type*.
 * Select *Region* depending on your Lambda region and paste your Lambda **ANR** into the *Endpoint* field when you have it.
 
-### 2. Create a new Api.ai Agent
+### 2. Create a new Dialogflow Agent
 #### Account
-* Log in to the [Api.ai console](https://console.api.ai/api-client/).
-* [Create a new agent](https://console.api.ai/api-client/#/newAgent) and fill all necessary information. Then click **Save** to continue.
+* Log in to the [Dialogflow console](https://console.dialogflow.com/api-client/).
+* [Create a new agent](https://console.dialogflow.com/api-client/#/newAgent) and fill all necessary information.
+* Enable **Dialogflow V2 API**.
+* Click **Save** to continue.
 
 #### Intents
 * Select **Default Welcome Intent**:
@@ -101,7 +103,7 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 * Enter a **Name** and choose **Node.js 6.x** as the *Runtime*.
 
 	##### Lambda function code
-	* [**Download the `AlexaApiAiBridge.zip` file**](https://github.com/Gnzlt/AlexaApiAiBridge/releases/latest) from the latest release of this repo.
+	* [**Download the `AlexaDialogflowBridge.zip` file**](https://github.com/Gnzlt/AlexaDialogflowBridge/releases/latest) from the latest release of this repo.
 	* Drop down the *Code entry type* menu and select **Upload a .ZIP file**.
 	* Click on the **Function package** upload button and choose the file you just downloaded.
 	
@@ -119,11 +121,11 @@ Bridge to connect Amazon Alexa to Api.ai using an AWS Lambda Function.
 ### Final Configuration
 * Copy the Lambda **ARN** (upper-right corner) and use in the [Alexa Skill Configuration section](#skill-configuration).
 * Go to your Lambda **Code** tab.
-* Replace `ALEXA_APP_ID` with your **Alexa App Id** and `APIAI_DEVELOPER_ACCESS_TOKEN` with your **Api.ai Developer Access Token**:
+* Replace `ALEXA_APP_ID` with your **Alexa App Id** and `DIALOGFLOW_DEVELOPER_ACCESS_TOKEN` with your **Dialogflow Developer Access Token**:
 
 	```
 	const ALEXA_APP_ID = 'amzn1.ask.skill.app.your-skill-id';
-	const APIAI_DEVELOPER_ACCESS_TOKEN = 'your-apiai-developer-access-token';
+	const DIALOGFLOW_DEVELOPER_ACCESS_TOKEN = 'your-dialogflow-developer-access-token';
 	```
 * Go to [Alexa Manager](http://alexa.amazon.com/spa/index.html#settings) and change the language of your device to **English (United States)** inside the Settings menu.
 
